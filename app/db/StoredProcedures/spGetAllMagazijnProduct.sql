@@ -31,7 +31,7 @@ BEGIN
     INNER JOIN  Magazijn AS MAGA
             ON  PROD.Id = MAGA.ProductId
     
-    ORDER BY PROD.Id ASC;
+    ORDER BY PROD.Barcode ASC;
     
 
 END //

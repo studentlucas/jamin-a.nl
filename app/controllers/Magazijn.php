@@ -21,7 +21,7 @@ class Magazijn extends BaseController
 
 
         $result = $this->magazijnModel->getAllMagazijnProduct();
-
+        
         if (is_null($result)) {
             $data['message'] = 'Er is zijn geen producten gevonden in het magazijn';
             $data['messageColor'] = 'danger';
@@ -31,6 +31,32 @@ class Magazijn extends BaseController
         }
 
         $this->view('magazijn/index', $data);
+    }
+
+    public function getProductLeveringById($productId) 
+    {
+
+        $data = [
+            'title' => 'LeveringsInformatie',
+            'dataRows' => NULL, 
+            'message' => NULL,
+            'messageColor' => NULL,
+            'messageVisibility' => 'display: none;'
+        ];
+
+        $result = $this->magazijnModel->getProductLeveringById($productId);
+
+        if (is_null($result)) {
+            $data['message'] = 'Er zijn geen leveringen bekend van dit product';
+            $data['messageColor'] = 'danger';
+            $data['messageVisibility'] = 'display: flex;';
+        } else {
+            $data['dataRows'] = $result;
+        }
+
+        
+        $this->view('magazijn/getProductLeveringById', $data);
+        
     }
 
 }

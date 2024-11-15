@@ -22,7 +22,43 @@
         <div class="col-2"></div>
     </div>
 
-    <?php var_dump($data['dataRows']); ?>
+
+    <div class="row mt-3">
+        <div class="col-2"></div>
+        <div class="col-8">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Barcode</th>
+                        <th>Naam</th>
+                        <th>Verpakkingseenheid</th>
+                        <th>Aantalaanwezig</th>
+                        <th>AllergenenInfo</th>
+                        <th>LeverantieInfo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php 
+                        foreach( $data['dataRows'] as $product) { ?>
+                        <tr>
+                            <td><?= $product->Barcode; ?></td>
+                            <td><?= $product->Naam; ?></td>
+                            <td><?= $product->VerpakkingsEenheid; ?></td>
+                            <td><?= $product->AantalAanwezig; ?></td>
+                            <td class="text-center" style="color: red;">
+                                <i class="bi bi-x-circle"></i>
+                            </td>
+                            <td class="text-center" style="color: blue;">
+                                <a href='<?= URLROOT; ?>/magazijn/getProductLeveringById/<?= $product->ProductId; ?>'><i class="bi bi-question-circle"></i></a>
+                            </td>
+                        </tr>
+                        <?php } ?>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="col-2"></div>
+    </div>
 
     <div class="row">
         <div class="col-2"></div>
