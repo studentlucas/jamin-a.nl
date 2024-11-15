@@ -22,6 +22,8 @@
         <div class="col-2"></div>
     </div>
 
+    <?php var_dump($data['dataRows']); ?>
+
     <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
