@@ -1,0 +1,55 @@
+/******************************************************
+-- Doel: Opvragen van records uit de tabellen ProductPerAllergeen
+         Allergeen en Product op basis
+         van het ProductId
+*******************************************************
+-- Versie: 01
+-- Datum: 19-11-2024
+-- Auteur: Arjan de Ruijter
+******************************************************/
+
+-- Selecteer de juiste database voor je stored procedure
+use `jamin_a`;
+
+-- Verwijder de oude stored procedure
+DROP PROCEDURE IF EXISTS spSelectAllergeenPerProductById;
+
+-- Verander even tijdelijk de opdrachtprompt naar //
+DELIMITER //
+
+CREATE PROCEDURE spSelectAllergeenPerProductById(
+    IN ProductId INT UNSIGNED
+)
+BEGIN
+
+    SELECT   PROD.Naam       AS ProductNaam   
+            ,PROD.Barcode
+            ,ALLE.Naam       AS AllergeenNaam
+            ,ALLE.Omschrijving
+
+
+    FROM ProductPerAllergeen AS PPA 
+
+    INNER JOIN Allergeen AS ALLE 
+            ON PPA.AllergeenId = ALLE.Id
+ 
+    INNER JOIN Product AS PROD 
+            ON PPA.ProductId = PROD.Id 
+        
+    WHERE PROD.Id = ProductId
+
+    ORDER BY PROD.Naam ASC;
+   
+
+
+END //
+DELIMITER ;
+
+/************* debug code stored procedure **************
+
+CALL spSelectAllergeenPerProductById(1);
+
+********************************************************/
+
+
+

@@ -59,4 +59,17 @@ class Magazijn extends BaseController
         
     }
 
+    public function getProductPerAllergeenById($productId)
+    {
+        $data = [
+            'title' => 'Overzicht Allergenen',
+            'dataRows' => NULL, 
+            'message' => NULL,
+            'messageColor' => NULL,
+            'messageVisibility' => 'display: none;'
+        ];
+
+        $this->view('magazijn/getProductPerAllergeenById', $data);
+    }
+
 }

@@ -45,11 +45,12 @@
                             <td><?= $product->Naam; ?></td>
                             <td><?= $product->VerpakkingsEenheid; ?></td>
                             <td><?= $product->AantalAanwezig; ?></td>
-                            <td class="text-center" style="color: red;">
-                                <i class="bi bi-x-circle"></i>
+                            <td class="text-center">
+                                <a href="<?= URLROOT; ?>/magazijn/getProductPerAllergeenById/<?= $product->ProductId; ?>"><i class="bi bi-x-circle"></i></a>
+                                
                             </td>
-                            <td class="text-center" style="color: blue;">
-                                <a href='<?= URLROOT; ?>/magazijn/getProductLeveringById/<?= $product->ProductId; ?>'><i class="bi bi-question-circle"></i></a>
+                            <td class="text-center">
+                                <a href='<?= URLROOT; ?>/magazijn/getProductLeveringById/<?= $product->ProductId; ?>'><i class="bi bi-question-circle" ></i></a>
                             </td>
                         </tr>
                         <?php } ?>

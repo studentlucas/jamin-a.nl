@@ -1,7 +1,5 @@
 <?php require_once APPROOT . '/views/includes/header.php'; ?>
 
-
-
 <!-- Maak een nieuwe view aan voor deze link -->
 <div class="container">
     <div class="row mt-3" style='<?= $data['messageVisibility']; ?>'>
@@ -62,15 +60,24 @@
                     <th>Eerstvolgende levering</th>
                 </thead>
                 <tbody>
-                    <?php foreach ($data['dataRows'] as $levering) { ?>
+                    <?php if ($data['dataRows'][array_key_last($data['dataRows'])]->AantalAanwezig == 0) { ?>
+                        <tr>
+                            <td colspan="4">
+                                Er is van dit van product op dit moment geen voorraad aanwezig, de verwachte eerstvolgende levering is: 
+                                <?= date_format(date_create($data['dataRows'][array_key_last($data['dataRows'])]->DatumEerstVolgendeLevering),"d-m-Y"); ?> 
+                            </td>
+                        </tr>
+
+                    <?php header('Refresh:4; url=' . URLROOT . '/Magazijn/index'); }  else {
+                    foreach ($data['dataRows'] as $levering) { ?>
 
                         <tr>
                             <td><?= $levering->ProductNaam; ?></td>
-                            <td><?= $levering->DatumLevering; ?></td>
+                            <td><?= date_format(date_create($levering->DatumLevering),'d-m-Y'); ?></td>
                             <td><?= $levering->Aantal; ?></td>
-                            <td><?= $levering->DatumEerstVolgendeLevering; ?></td>
+                            <td><?= date_format(date_create($levering->DatumEerstVolgendeLevering),'d-m-Y'); ?></td>
                         </tr>
-                    <?php } ?>
+                    <?php } } ?>
                 </tbody>
             </table>
         </div>

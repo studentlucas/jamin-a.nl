@@ -31,6 +31,7 @@ BEGIN
            ,LEVE.Contactpersoon
            ,LEVE.Leveranciernummer
            ,LEVE.Mobiel
+           ,MAGA.AantalAanwezig
 
     FROM  ProductPerLeverancier AS PPL
 
@@ -39,6 +40,9 @@ BEGIN
 
     INNER JOIN Leverancier AS LEVE 
             ON PPL.LeverancierId = LEVE.Id
+
+    INNER JOIN Magazijn AS MAGA 
+            ON MAGA.ProductId = PROD.Id
 
     WHERE PPL.ProductId = ProductId
 
