@@ -62,9 +62,9 @@
                 <tbody>
                     <?php if ($data['dataRows'][array_key_last($data['dataRows'])]->AantalAanwezig == 0) { ?>
                         <tr>
-                            <td colspan="4">
-                                Er is van dit van product op dit moment geen voorraad aanwezig, de verwachte eerstvolgende levering is: 
-                                <?= date_format(date_create($data['dataRows'][array_key_last($data['dataRows'])]->DatumEerstVolgendeLevering),"d-m-Y"); ?> 
+                            <td colspan="4" class="text-center">
+                                Er is van dit van product op dit moment geen voorraad aanwezig<br> de verwachte eerstvolgende levering is: 
+                                <?= $data['dataRows'][array_key_last($data['dataRows'])]->DatumEerstVolgendeLevering; ?> 
                             </td>
                         </tr>
 
@@ -73,9 +73,9 @@
 
                         <tr>
                             <td><?= $levering->ProductNaam; ?></td>
-                            <td><?= date_format(date_create($levering->DatumLevering),'d-m-Y'); ?></td>
+                            <td><?= $levering->DatumLevering ?></td>
                             <td><?= $levering->Aantal; ?></td>
-                            <td><?= date_format(date_create($levering->DatumEerstVolgendeLevering),'d-m-Y'); ?></td>
+                            <td><?= $levering->DatumEerstVolgendeLevering ;?></td>
                         </tr>
                     <?php } } ?>
                 </tbody>

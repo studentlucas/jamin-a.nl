@@ -46,11 +46,11 @@
                             <td><?= $product->VerpakkingsEenheid; ?></td>
                             <td><?= $product->AantalAanwezig; ?></td>
                             <td class="text-center">
-                                <a href="<?= URLROOT; ?>/magazijn/getProductPerAllergeenById/<?= $product->ProductId; ?>"><i class="bi bi-x-circle"></i></a>
+                                <a href="<?= URLROOT; ?>/magazijn/getProductPerAllergeenById/<?= $product->ProductId; ?>"><i class="bi bi-x-circle text-danger"></i></a>
                                 
                             </td>
                             <td class="text-center">
-                                <a href='<?= URLROOT; ?>/magazijn/getProductLeveringById/<?= $product->ProductId; ?>'><i class="bi bi-question-circle" ></i></a>
+                                <a href='<?= URLROOT; ?>/magazijn/getProductLeveringById/<?= $product->ProductId; ?>'><i class="bi bi-question-circle text-primary" ></i></a>
                             </td>
                         </tr>
                         <?php } ?>

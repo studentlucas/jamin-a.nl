@@ -46,4 +46,20 @@ class MagazijnModel
             logger(__LINE__, __METHOD__, __FILE__, $e->getMessage());
         }
     }
+
+    function getProductPerAllergeenById($productId)
+    {
+        try {
+            $sql = "CALL spSelectAllergeenPerProductById(:productId)";
+
+            $this->db->query($sql);
+
+            $this->db->bind(':productId', $productId, PDO::PARAM_INT);
+
+            return $this->db->resultSet();
+        } catch (Exception $e) {
+            // Behandel de uitzondering hier, bijvoorbeeld loggen of een foutmelding weergeven
+            logger(__LINE__, __METHOD__, __FILE__, $e->getMessage());
+        }
+    }
 }

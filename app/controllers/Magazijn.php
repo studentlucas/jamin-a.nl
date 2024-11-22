@@ -69,6 +69,16 @@ class Magazijn extends BaseController
             'messageVisibility' => 'display: none;'
         ];
 
+        $result = $this->magazijnModel->getProductPerAllergeenById($productId);
+
+        if (is_null($result)) {
+            $data['message'] = 'Er zijn geen Allergenen bekend van dit product';
+            $data['messageColor'] = 'danger';
+            $data['messageVisibility'] = 'display: flex;';
+        } else {
+            $data['dataRows'] = $result;
+        }
+
         $this->view('magazijn/getProductPerAllergeenById', $data);
     }
 

@@ -28,17 +28,19 @@ BEGIN
             ,ALLE.Omschrijving
 
 
-    FROM ProductPerAllergeen AS PPA 
-
-    INNER JOIN Allergeen AS ALLE 
-            ON PPA.AllergeenId = ALLE.Id
+    FROM Product AS PROD
  
-    INNER JOIN Product AS PROD 
+    LEFT JOIN ProductPerAllergeen AS PPA
             ON PPA.ProductId = PROD.Id 
         
+    LEFT JOIN Allergeen AS ALLE 
+            ON PPA.AllergeenId = ALLE.Id
+
     WHERE PROD.Id = ProductId
 
     ORDER BY PROD.Naam ASC;
+
+    
    
 
 
