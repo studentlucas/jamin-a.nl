@@ -39,7 +39,7 @@
                 </thead>
                 <tbody>
                     <?php 
-                        foreach( $data['dataRows'] as $product) { ?>
+                        foreach($data['dataRows'] as $product) { ?>
                         <tr>
                             <td><?= $product->Barcode; ?></td>
                             <td><?= $product->Naam; ?></td>
