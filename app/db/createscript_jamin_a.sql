@@ -236,7 +236,7 @@ CREATE TABLE IF NOT EXISTS ProductPerLeverancier
     ,ProductId                      MEDIUMINT       UNSIGNED          NOT NULL
     ,DatumLevering                  DATE                              NOT NULL
     ,Aantal                         INT             UNSIGNED          NOT NULL
-    ,DatumEerstVolgendeLevering     DATE                              NOT NULL
+    ,DatumEerstVolgendeLevering     DATE                                  NULL
     ,IsActief                       BIT                               NOT NULL      DEFAULT 1
     ,Opmerkingen                    VARCHAR(255)                          NULL      DEFAULT NULL
     ,DatumAangemaakt                Datetime(6)                       NOT NULL
