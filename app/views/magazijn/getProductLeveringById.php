@@ -62,9 +62,9 @@
                 <tbody>
                     <?php if ($data['dataRows'][array_key_last($data['dataRows'])]->AantalAanwezig == 0) { ?>
                         <tr>
-                            <td colspan="4" class="text-center">
+                            <td colspan="4" class="text-center text-danger">
                                 Er is van dit van product op dit moment geen voorraad aanwezig<br> de verwachte eerstvolgende levering is: 
-                                <?= $data['dataRows'][array_key_last($data['dataRows'])]->DatumEerstVolgendeLevering; ?> 
+                                <span class="text-primary"><?= $data['dataRows'][array_key_last($data['dataRows'])]->DatumEerstVolgendeLevering; ?></span> 
                             </td>
                         </tr>
 
@@ -75,7 +75,7 @@
                             <td><?= $levering->ProductNaam; ?></td>
                             <td><?= $levering->DatumLevering ?></td>
                             <td><?= $levering->Aantal; ?></td>
-                            <td><?= $levering->DatumEerstVolgendeLevering ;?></td>
+                            <td><?= $levering->DatumEerstVolgendeLevering ?? "-"; ?></td>
                         </tr>
                     <?php } } ?>
                 </tbody>

@@ -61,10 +61,10 @@
         <div class="col-2"></div>
     </div>
 
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-2"></div>
         <div class="col-8">
-            <a href="<?= URLROOT; ?>/homepages/index">Homepage</a>
+            <h5>Homepage&nbsp;<a href="<?= URLROOT; ?>/homepages/index"><i class="bi bi-arrow-left-square-fill"></i></a></h5>
         </div>
         <div class="col-2"></div>
     </div>

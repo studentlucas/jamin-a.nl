@@ -82,4 +82,6 @@ class Magazijn extends BaseController
         $this->view('magazijn/getProductPerAllergeenById', $data);
     }
 
+
+
 }

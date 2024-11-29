@@ -13,7 +13,6 @@ define('DB_PASS', '');
  */
 define('URLROOT', 'http://www.jamin-a.nl');
 
-
 /**
  * Het pad naar de folder app
  */

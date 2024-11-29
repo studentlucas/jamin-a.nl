@@ -52,7 +52,7 @@
                 <tbody>
                     <?php if ($data['dataRows'][array_key_last($data['dataRows'])]->AllergeenNaam == NULL) { ?>
                         <tr>
-                            <td colspan="2" class="text-center">
+                            <td colspan="2" class="text-center text-danger">
                             In dit product zitten geen stoffen die een allergische reactie kunnen veroorzaken 
                             </td>
                         </tr>
@@ -76,7 +76,7 @@
     <div class="row mt-3">
         <div class="col-4"></div>
         <div class="col-4">
-            <h3><a href="<?= URLROOT; ?>/Magazijn/index"><i class="bi bi-arrow-left-square-fill"></i></a></h3>
+            <h4><a href="<?= URLROOT; ?>/Magazijn/index"><i class="bi bi-arrow-left-square-fill"></i></a></h4>
         </div>
         <div class="col-4"></div>
 

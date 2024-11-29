@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS Magazijn
     ,Opmerkingen          VARCHAR(255)                          NULL      DEFAULT NULL
     ,DatumAangemaakt      Datetime(6)                       NOT NULL
     ,DatumGewijzigd       Datetime(6)                       NOT NULL
-    ,CONSTRAINT           PK_Magazijn_Id  PRIMARY KEY CLUSTERED (Id)
+    ,CONSTRAINT           PK_Magazijn_Id                    PRIMARY KEY CLUSTERED (Id)
     ,CONSTRAINT           FK_Magazijn_ProductId_Product_Id  FOREIGN KEY (ProductId) REFERENCES Product(Id)
 ) ENGINE=InnoDB   AUTO_INCREMENT=1;
 
