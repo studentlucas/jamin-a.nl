@@ -29,6 +29,7 @@ BEGIN
             ,MAGA.ProductId             AS MagazijnProductId 
             ,MAGA.VerpakkingsEenheid
             ,MAGA.AantalAanwezig
+            ,COUNT(*) OVER()            AS TotalRows
 
     FROM    Product AS PROD
 
